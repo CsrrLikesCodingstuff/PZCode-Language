@@ -1,0 +1,14 @@
+site_name: PZCode Language
+site_description: Documentation for the PZCode custom programming language.
+site_author: CsrrLikesCodingstuff
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: blue  # This gives you that custom blue top bar!
+    accent: light blue
+
+nav:
+  - Home: index.md
+  - Syntax & Guide: syntax.md
