@@ -7,7 +7,7 @@ name = "PZCode"
 version = "1.0.1" 
 description = "A custom programming language interpreter"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 license = { text = "MIT" }
 classifiers = [
     "Programming Language :: Python :: 3",
