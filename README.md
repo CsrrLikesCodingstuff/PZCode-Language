@@ -2,8 +2,8 @@
 
   PZCode is a small programming language I made using Python.
 
-  I created it as a beginner-friendly project to learn more about interpreters, programming languages, and how commands
-  can be processed by code. PZCode uses simple English-like commands and `.pzc` source files.
+  I created it as a beginner project to learn more about interpreters, programming languages, and how commands
+  can be processed by code. PZCode uses simple commands and `.pzc` source files.
 
   ## Features
 
