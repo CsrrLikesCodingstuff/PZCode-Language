@@ -1,0 +1,6 @@
+ say "Guess the number!"
+  random 1 to 10 in secret
+  ask "Your guess: " in guess
+  if guess == secret: say "Correct!"
+  if guess != secret: say "Wrong!"
+  say secret

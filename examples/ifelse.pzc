@@ -1,0 +1,2 @@
+store 21 in age 
+if age > 20: say "Congrats! you are now signed up." else: say "You need to be atleast 21 to sign up."

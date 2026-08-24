@@ -1,0 +1,8 @@
+# PyInstaller junk
+build/
+dist/
+*.spec
+
+# Python cache
+__pycache__/
+*.py[cod]
