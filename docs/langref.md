@@ -1,184 +1,184 @@
+Markdown
 # Language Reference
 
-  PZCode programs are plain-text files that use the `.pzc` extension.
+PZCode programs are plain-text files that use the `.pzc` extension.
 
-  PZCode currently executes one command per line.
+PZCode currently executes one command per line.
 
-  ## Comments
+## Comments
 
-  Comments begin with `#`.
+Comments begin with `#`.
 
-  ```pzc
-  # This line is ignored
-  say "This line is executed"
+```pzc
+# This line is ignored
+say "This line is executed"
+Empty lines are also ignored.
 
-  Empty lines are also ignored.
+Values
+PZCode supports:
 
-  ## Values
+Whole numbers
 
-  PZCode supports:
+Text strings
 
-  - Whole numbers
-  - Text strings
-  - Variables
-  - Math expressions
+Variables
 
-  Numbers can be written directly:
+Math expressions
 
-  say 42
+Numbers can be written directly:
 
-  Text must be surrounded by single or double quotation marks:
+Kod snippet'i
+say 42
+Text must be surrounded by single or double quotation marks:
 
-  say "Hello"
-  say 'Hello'
+Kod snippet'i
+say "Hello"
+say 'Hello'
+Variables
+Variables store values.
 
-  ## Variables
+Kod snippet'i
+store 100 in score
+store "Alex" in player_name
+Variables can be used by referring to their names:
 
-  Variables store values.
+Kod snippet'i
+say score
+say player_name
+The set command is an alias for store:
 
-  store 100 in score
-  store "Alex" in player_name
+Kod snippet'i
+set 100 in coins
+Mathematics
+PZCode supports these mathematical operators:
 
-  Variables can be used by referring to their names:
++ Addition
 
-  say score
-  say player_name
+- Subtraction
 
-  The set command is an alias for store:
+* Multiplication
 
-  set 100 in coins
+/ Division
 
-  ## Mathematics
+% Remainder
 
-  PZCode supports these mathematical operators:
+Examples:
 
-  +    Addition
-  -    Subtraction
-  *    Multiplication
-  /    Division
-  %    Remainder
+Kod snippet'i
+store 10 + 5 in total
+store 10 - 3 in difference
+store 4 * 5 in product
+store 20 / 4 in answer
+store 10 % 3 in remainder
+Variables can be used in expressions:
 
-  Examples:
+Kod snippet'i
+store 100 in coins
+store coins + 25 in new_coins
+say new_coins
+Input
+Use ask to request input from the user:
 
-  store 10 + 5 in total
-  store 10 - 3 in difference
-  store 4 * 5 in product
-  store 20 / 4 in answer
-  store 10 % 3 in remainder
+Kod snippet'i
+ask "What is your name? " in name
+say name
+Whole-number input is stored as an integer:
 
-  Variables can be used in expressions:
+Kod snippet'i
+ask "How old are you? " in age
+say age
+Other input is stored as text.
 
-  store 100 in coins
-  store coins + 25 in new_coins
-  say new_coins
+Conditions
+Conditions use comparison operators.
 
-  ## Input
+Kod snippet'i
+store 75 in score
 
-  Use ask to request input from the user:
+if score >= 50: say "You passed!"
+Supported comparison operators:
 
-  ask "What is your name? " in name
-  say name
+> Greater than
 
-  Whole-number input is stored as an integer:
+< Less than
 
-  ask "How old are you? " in age
-  say age
+== Equal to
 
-  Other input is stored as text.
+!= Not equal to
 
-  ## Conditions
+>= Greater than or equal to
 
-  Conditions use comparison operators.
+<= Less than or equal to
 
-  store 75 in score
+Conditions and their commands must be written on the same line.
 
-  if score >= 50: say "You passed!"
+Else Statements
+An else command can be added to an if statement:
 
-  Supported comparison operators:
+Kod snippet'i
+if score >= 50: say "Passed!" else: say "Failed!"
+Counted Loops
+Use repeat to execute a command a specific number of times:
 
-  >     Greater than
-  <     Less than
-  ==    Equal to
-  !=    Not equal to
-  >=    Greater than or equal to
-  <=    Less than or equal to
+Kod snippet'i
+repeat 3: say "Hello!"
+The command being repeated must be written on the same line.
 
-  Conditions and their commands must be written on the same line.
+Repeat-While Loops
+Use repeat while to continue executing a command while a condition is true:
 
-  ## Else Statements
+Kod snippet'i
+store 1 in count
+repeat while count <= 5: store count + 1 in count
+The interpreter has a safety limit of 1000 executions for a repeat while command. This helps prevent accidental infinite loops.
 
-  An else command can be added to an if statement:
+Random Numbers
+Generate a random whole number with:
 
-  if score >= 50: say "Passed!" else: say "Failed!"
+Kod snippet'i
+random 1 to 6 in dice
+say dice
+The minimum and maximum values are included in the possible results.
 
-  ## Counted Loops
+Text Operations
+Convert text to uppercase:
 
-  Use repeat to execute a command a specific number of times:
+Kod snippet'i
+upper "hello" in loud_text
+say loud_text
+Convert text to lowercase:
 
-  repeat 3: say "Hello!"
+Kod snippet'i
+lower "GOODBYE" in quiet_text
+say quiet_text
+Find the length of text:
 
-  The command being repeated must be written on the same line.
+Kod snippet'i
+length "PZCode" in character_count
+say character_count
+Waiting
+Pause the interpreter for a number of seconds:
 
-  ## Repeat-While Loops
+Kod snippet'i
+wait 2
+Clearing the Screen
+Clear the terminal:
 
-  Use repeat while to continue executing a command while a condition is true:
+Kod snippet'i
+clear
+On Windows, cls is also supported:
 
-  store 1 in count
-  repeat while count <= 5: store count + 1 in count
+Kod snippet'i
+cls
+Source Files
+PZCode source files must end with:
 
-  The interpreter has a safety limit of 1000 executions for a repeat while command. This helps prevent accidental
-  infinite loops.
+Plaintext
+.pzc
+For example:
 
-  ## Random Numbers
+hello.pzc
 
-  Generate a random whole number with:
+game.pzc
 
-  random 1 to 6 in dice
-  say dice
-
-  The minimum and maximum values are included in the possible results.
-
-  ## Text Operations
-
-  Convert text to uppercase:
-
-  upper "hello" in loud_text
-  say loud_text
-
-  Convert text to lowercase:
-
-  lower "GOODBYE" in quiet_text
-  say quiet_text
-
-  Find the length of text:
-
-  length "PZCode" in character_count
-  say character_count
-
-  ## Waiting
-
-  Pause the interpreter for a number of seconds:
-
-  wait 2
-
-  ## Clearing the Screen
-
-  Clear the terminal:
-
-  clear
-
-  On Windows, cls is also supported:
-
-  cls
-
-  ## Source Files
-
-  PZCode source files must end with:
-
-  .pzc
-
-  For example:
-
-  hello.pzc
-  game.pzc
-  math_example.pzc
+math_example.pzc
