@@ -343,6 +343,7 @@
   also helping me understand how interpreters work.
 
   It is still a work in progress, but I plan to continue improving it and adding new features.
+  So yeah! thank you so much for using this project. 
 
   ## License
 
